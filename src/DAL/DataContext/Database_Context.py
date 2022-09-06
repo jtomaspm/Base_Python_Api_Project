@@ -21,6 +21,8 @@ class Database_Context:
                 print("Database does not exist")
             else:
                 print(err)
+        else:
+            cnx.commit()
         finally:
             if cnx:
                 cnx.close()

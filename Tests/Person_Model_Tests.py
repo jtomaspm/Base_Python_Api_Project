@@ -22,6 +22,10 @@ class Person_Model_Tests:
         }
         person = Person(self.ctx)
         res = person.new(person_data)
+        res = person.new(person_data)
+        res = person.new(person_data)
+        res = person.new(person_data)
+        res = person.delete("id <= 2")
 
         assert res != None
 
