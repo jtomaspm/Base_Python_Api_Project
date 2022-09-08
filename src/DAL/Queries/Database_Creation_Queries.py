@@ -20,7 +20,7 @@ def create_database(ctx : Database_Context):
         except mysql.connector.Error as err:
             print("Database {} does not exists.".format(DB_NAME))
             if err.errno == errorcode.ER_BAD_DB_ERROR:
-                create_database_int(cursor)
+                create_database_int(cursor, DB_NAME)
                 print("Database {} created successfully.".format(DB_NAME))
                 cnx.database = DB_NAME
                 ctx.config['database'] = DB_NAME

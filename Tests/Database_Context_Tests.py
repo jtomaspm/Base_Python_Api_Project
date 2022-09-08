@@ -27,6 +27,8 @@ class Database_Context_Tests:
         db_ctx = Database_Context(config)
         i = 0
         with db_ctx.cursor() as (_, cursor):
+            if isinstance(cursor, CMySQLCursor):
+                pass
             cursor.execute("SELECT * FROM Person")
             for p in cursor:
                 i += 1
